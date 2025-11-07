@@ -114,8 +114,6 @@ Rails.application.configure do
   elsif ENV['RENDER_EXTERNAL_URL'].present?
     # Backward compatibility for Render deployments
     Rails.application.routes.default_url_options[:host] = ENV['RENDER_EXTERNAL_URL']
-  else
-    # Fallback warning - application will use request.host which may cause issues
-    Rails.logger.warn "WARNING: APP_HOST environment variable not set. URLs may not generate correctly."
   end
+  # Note: If neither APP_HOST nor RENDER_EXTERNAL_URL is set, URLs will be generated using request.host
 end
