@@ -21,6 +21,10 @@ Spree.config do |config|
   # Settings → General Settings → Security → Uncheck "Check for Spree Alerts"
 end
 
+# Set default currency to avoid deprecation warning
+# Additional currencies can be configured in the Admin UI: Settings → Stores → Currencies
+Money.default_currency = 'USD'
+
 # Background job queue names
 # Spree.queues.default = :default
 # Spree.queues.variants = :default
