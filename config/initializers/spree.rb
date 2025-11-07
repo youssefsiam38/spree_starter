@@ -13,12 +13,12 @@
 # More on configuring Spree preferences can be found at:
 # https://docs.spreecommerce.org/developer/customization
 Spree.config do |config|
-  # Disable the "upgrade to Enterprise Edition" banner and Spree alerts in admin
-  config.check_for_spree_alerts = false
-
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
+
+  # Note: To disable Enterprise Edition banners, configure via Admin UI:
+  # Settings → General Settings → Security → Uncheck "Check for Spree Alerts"
 end
 
 # Background job queue names
